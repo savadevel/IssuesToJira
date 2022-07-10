@@ -3,8 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Отчет по загрузке задач в Jira</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
 </head>
 <body>
-
+<table>
+    <tr>
+        <th>Key issue</th>
+        <th>Issue</th>
+    </tr>
+    <tr th:each="element : ${report}">
+        <td th:text="${element.key}">keyvalue</td>
+        <td>
+            <table>
+                <tr th:each="item : ${element.value}">
+                    <td th:text="${item.projectKey}">projectKey</td>
+                    <td th:text="${item.id}">id</td>
+                    <td th:text="${item.type}">type</td>
+                    <td th:text="${item.priority}">priority</td>
+                    <td th:text="${item.summary}">summary</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
 </body>
 </html>
