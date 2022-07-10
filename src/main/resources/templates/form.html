@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма загрузки задач в Jira</title>
+</head>
+<body>
+<form action="#" th:method="POST" th:action="@{/}" th:object="${jiraDto}" enctype="multipart/form-data">
+    <fieldset>
+        <legend>Форма загрузки задач в Jira</legend>
+
+        <table>
+            <tr>
+                <td><label for="url">URL:</label></td>
+                <td><input type="text" id="url" th:field="*{url}"/></td>
+            </tr>
+
+            <tr>
+                <td><label for="username">username:</label></td>
+                <td><input type="email" id="username" th:field="*{username}"/></td>
+            </tr>
+
+            <tr>
+                <td><label for="password">password:</label></td>
+                <td><input type="password" id="password" th:field="*{password}"/></td>
+            </tr>
+
+            <tr>
+                <td><label for="password">Файл задачами, формат XML:</label></td>
+                <td><input type="file" id="file" th:field="*{file}"/></td>
+            </tr>
+
+            <tr>
+                <td><input type="submit" value="Загрузить"/></td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+</body>
+</html>
