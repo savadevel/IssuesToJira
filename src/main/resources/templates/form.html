@@ -5,28 +5,28 @@
     <title>Форма загрузки задач в Jira</title>
 </head>
 <body>
-<form action="#" th:method="POST" th:action="@{/}" th:object="${jiraDto}" enctype="multipart/form-data">
+<form action="#" th:method="POST" th:action="@{/}" th:object="${formTo}" enctype="multipart/form-data">
     <fieldset>
-        <legend>Форма загрузки задач в Jira</legend>
+        <legend><h1>Форма загрузки задач в Jira</h1></legend>
 
         <table>
             <tr>
-                <td><label for="url">URL:</label></td>
+                <td><label for="url">URL*:</label></td>
                 <td><input type="text" id="url" th:field="*{url}"/></td>
             </tr>
 
             <tr>
-                <td><label for="username">username:</label></td>
+                <td><label for="username">username*:</label></td>
                 <td><input type="email" id="username" th:field="*{username}"/></td>
             </tr>
 
             <tr>
-                <td><label for="password">password:</label></td>
+                <td><label for="password">password*:</label></td>
                 <td><input type="password" id="password" th:field="*{password}"/></td>
             </tr>
 
             <tr>
-                <td><label for="password">Файл задачами, формат XML:</label></td>
+                <td><label for="password">Файл задачами, формат XML*:</label></td>
                 <td><input type="file" id="file" th:field="*{file}"/></td>
             </tr>
 
