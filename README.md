@@ -1,14 +1,14 @@
 # IssueToJira 
 
+Java приложение (maven проект, spring boot), 
+создания задач в Jira на основе исходных данных в XML файле.
 
-Java приложение (maven проект, spring boot), создания задач в Jira на основе исходных данных в XML файле.
+## Запуск приложения
+1. `git clone https://github.com/savadevel/IssuesToJira`
+2. `cd IssuesToJira`
+3. `mvn spring-boot:run`
 
-Для запуска Приложения, выполнить команду:
-
-```shell
-mvn spring-boot:run
-```
-
+## Использование приложения
 При локальном запуске, Приложение доступно по адресу [http://localhost:7070](http://localhost:7070). При переходе 
 по указанному адресу открывается страница "Форма загрузки задач в Jira":
 
