@@ -6,13 +6,22 @@ Java приложение (maven проект, spring boot),
 ## Запуск приложения
 1. `git clone https://github.com/savadevel/IssuesToJira`
 2. `cd IssuesToJira`
-3. `mvn spring-boot:run`
+3. `mvnw package`
+4. `java -jar ./target/IssuesToJira-1.0.0.jar`
 
 ## Использование приложения
 При локальном запуске, Приложение доступно по адресу [http://localhost:7070](http://localhost:7070). При переходе 
 по указанному адресу открывается страница "Форма загрузки задач в Jira":
 
 ![form.png](form.png)
+
+По результатам работы Приложения выводится отчет по загрузке задач в Jira, с указанием ключа задачи в Jira
+
+![report.png](report.png)
+
+При ошибках выводится страница с указанием ошибки / ошибок
+
+![error.png](error.png)
 
 Приложение не создает проект, оно находит его в Jira по projectKey, указанному в XML файле, см. ниже.
 Т.е. требуется предварительно создать проект с тем же ключом в Jira.
