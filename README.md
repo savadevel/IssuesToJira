@@ -16,9 +16,9 @@ Java приложение (maven проект, spring boot),
 ![form.png](form.png)
 
 Учетные данные для проверки (действительны на 11.07.2022):
-* URL: https://nocomo9266.atlassian.net
-* username: nocomo9266@lenfly.com
-* password: xZnscYftBkE7D7tRgYhX6530
+* URL: https://petenoy837.atlassian.net
+* username: petenoy837@satedly.com
+* password: ed3KhPBoYOxaexH18aHOA92D
 * Файл с задачами, формат XML, см. InputFile.xml
 
 По результатам работы Приложения выводится отчет по загрузке задач в Jira, с указанием ключа задачи в Jira
