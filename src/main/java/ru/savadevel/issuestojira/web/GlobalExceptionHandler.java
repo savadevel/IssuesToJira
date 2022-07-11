@@ -19,6 +19,7 @@ public class GlobalExceptionHandler {
     private static final String ERROR_ATTRIBUTE = "error";
 
     @ExceptionHandler(ApplicationException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
     public String applicationError(ApplicationException exception, Model model) {
         model.addAttribute(ERROR_ATTRIBUTE, exception.getLocalizedMessage());
         log.error("applicationError: {}", exception.getMessage());
@@ -26,6 +27,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(IllegalRequestDataException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
     public String illegalRequestDataError(IllegalRequestDataException exception, Model model) {
         model.addAttribute(ERROR_ATTRIBUTE, exception.getBindingResult().getAllErrors());
         log.error("illegalRequestDataError: {}", exception.getMessage());
