@@ -1,5 +1,8 @@
 package ru.savadevel.issuestojira.model;
 
+/**
+ * Типы задач в Jira, задается ID типа в Jira
+ */
 public enum TypeJira {
     TASK(10001L),
     EPIC(10002L),

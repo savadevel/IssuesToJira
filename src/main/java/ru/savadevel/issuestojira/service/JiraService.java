@@ -11,6 +11,9 @@ import java.io.Closeable;
 import java.io.IOException;
 import java.net.URI;
 
+/**
+ * Сервис для работы c Jira
+ */
 public class JiraService implements Closeable {
     private final String username;
     private final String password;
@@ -34,6 +37,11 @@ public class JiraService implements Closeable {
         return URI.create(this.jiraUrl);
     }
 
+    /**
+     * Создает задачу в Jira
+     * @param issue задача в Jira, которую требуется создать
+     * @return key созданной задачи в Jira
+     */
     public String createIssue(IssueJira issue) {
         IssueRestClient issueClient = restClient.getIssueClient();
         IssueInput newIssue = new IssueInputBuilder()

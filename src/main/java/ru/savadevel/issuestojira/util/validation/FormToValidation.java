@@ -19,6 +19,9 @@ import javax.xml.validation.SchemaFactory;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Валидатор формы
+ */
 @Component
 public class FormToValidation implements Validator {
 
@@ -32,6 +35,11 @@ public class FormToValidation implements Validator {
         return FormTo.class.equals(clazz);
     }
 
+    /**
+     * Валидирует XML файл на предмет соответствия XSD схеме
+     * @param target объект для валидации
+     * @param errors ошибки валидации
+     */
     @Override
     public void validate(Object target, Errors errors) {
         FormTo formTo = (FormTo) target;

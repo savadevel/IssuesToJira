@@ -9,11 +9,21 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+/**
+ * Утилитный класс для работы с задачами
+ */
 public class IssueUtil {
 
     private IssueUtil() {
     }
 
+    /**
+     * Конвертирует список задач в задачи для Jira
+     * @param projectKey ключ проекта
+     * @param issuesTo задачи для конвертации
+     * @param descriptionsTo описание задач для конвертации
+     * @return список задач для Jira
+     */
     public static List<IssueJira> getFromTo(String projectKey, List<IssueTo> issuesTo, List<DescriptionTo> descriptionsTo) {
         Map<Integer, IssueTo> issuesToGroupById = getIssueToGroupById(issuesTo);
         Map<Integer, DescriptionTo> descriptionsToGroupById = DescriptionUtil.getDescriptionToGroupById(descriptionsTo);

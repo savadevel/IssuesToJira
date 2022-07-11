@@ -6,6 +6,9 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+/**
+ * Параметры формы загрузки задач в Jira, включает параметры подключения к Jira и задачи, которые требуется создать
+ */
 @Getter
 @Setter
 @NoArgsConstructor

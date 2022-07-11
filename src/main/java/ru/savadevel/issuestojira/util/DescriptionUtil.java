@@ -7,6 +7,9 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+/**
+ * Утилитный класс для работы с описанием задачи
+ */
 public class DescriptionUtil {
     private DescriptionUtil() {
     }

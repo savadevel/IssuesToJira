@@ -15,6 +15,9 @@ import ru.savadevel.issuestojira.util.validation.FormToValidation;
 import javax.validation.Valid;
 import java.util.Map;
 
+/**
+ * Котроллер обрабатывающий запросы пользователя по загрузке / созданию задач в Jira
+ */
 @Controller
 public class JiraController {
 
@@ -31,6 +34,11 @@ public class JiraController {
         this.formToValidation = formToValidation;
     }
 
+    /**
+     * Отображение формы загрузки / создания задач в Jira
+     * @param model атрибуты модели
+     * @return страница формы
+     */
     @GetMapping("/")
     public String form(Model model) {
         log.info("Request form load issues to Jira");
@@ -38,6 +46,14 @@ public class JiraController {
         return FORM_LOAD_ISSUES;
     }
 
+    /**
+     * Получает заданную пользователем форму загрузки / создания задач в Jira, выполняет их загрузку в Jira
+     * При ошибках в форме загрузки / создания задач в Jira кидает исключение IllegalRequestDataException
+     * @param formTo параметры загрузки / создания задач в Jira
+     * @param bindingResult результаты проверки параметров формы загрузки / создания задач в Jira
+     * @param model атрибуты модели
+     * @return страница отчета
+     */
     @PostMapping("/")
     public String submit(@Valid @ModelAttribute(FORM_ATTRIBUTE) FormTo formTo, BindingResult bindingResult, Model model) {
         log.info("Submit form load issues to Jira: {} {}", formTo.getUrl(), formTo.getUsername());

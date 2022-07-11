@@ -4,6 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NonNull;
 
+/**
+ *  Задача в Jira
+ */
 @Data
 @AllArgsConstructor
 public class IssueJira {

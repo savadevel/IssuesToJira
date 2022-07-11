@@ -1,5 +1,8 @@
 package ru.savadevel.issuestojira.model;
 
+/**
+ * Приоритет задачи в Jira, задается ID приоритета в Jira
+ */
 public enum PriorityJira {
     HIGHEST(1L),
     HIGH(2L),

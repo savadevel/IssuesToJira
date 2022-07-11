@@ -14,10 +14,18 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Утилитный класс для работы с сервисом Jira
+ */
 public class JiraUtil {
     private JiraUtil() {
     }
 
+    /**
+     * Создание задач в Jira, при ошибках кидает исключение ApplicationException
+     * @param formTo форма с параметрами подключения к Jira и задачами Jira, которые требуется создать
+     * @return отчет по созданию задач в Jira, содержит пары: ключ задачи в Jira и переданная задача Jira
+     */
     public static Map<String, IssueJira> createIssue(FormTo formTo) {
         ProjectJira projectJira = getProjectJira(formTo);
         Map<String, IssueJira> result = new HashMap<>();

@@ -5,8 +5,10 @@ import org.springframework.validation.BindingResult;
 
 import java.util.stream.Collectors;
 
+/**
+ * Исключение при обработке входных параметров
+ */
 public class IllegalRequestDataException extends RuntimeException {
-
 
     private final transient BindingResult bindingResult;
 
@@ -18,6 +20,10 @@ public class IllegalRequestDataException extends RuntimeException {
         this.bindingResult = bindingResult;
     }
 
+    /**
+     * Возвращает результаты проверки входных параметров
+     * @return результаты проверки входных параметров
+     */
     public BindingResult getBindingResult() {
         return bindingResult;
     }

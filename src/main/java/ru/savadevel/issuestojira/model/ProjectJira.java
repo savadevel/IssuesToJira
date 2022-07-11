@@ -6,6 +6,9 @@ import lombok.NonNull;
 
 import java.util.List;
 
+/**
+ * Проект в Jira
+ */
 @Data
 @AllArgsConstructor
 public class ProjectJira {
