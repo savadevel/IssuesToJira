@@ -1,7 +1,6 @@
 package ru.savadevel.issuestojira.util.validation;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
@@ -23,9 +22,8 @@ import java.io.IOException;
  * Валидатор формы
  */
 @Component
+@Slf4j
 public class FormToValidation implements Validator {
-
-    private static final Logger log = LoggerFactory.getLogger(FormToValidation.class);
 
     @Value("${file.xml.schema.validation}")
     private String fileXmlSchemaValidation;
@@ -37,6 +35,7 @@ public class FormToValidation implements Validator {
 
     /**
      * Валидирует XML файл на предмет соответствия XSD схеме
+     *
      * @param target объект для валидации
      * @param errors ошибки валидации
      */

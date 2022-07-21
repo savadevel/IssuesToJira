@@ -1,11 +1,12 @@
 package ru.savadevel.issuestojira.web;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import ru.savadevel.issuestojira.model.IssueJira;
 import ru.savadevel.issuestojira.to.FormTo;
 import ru.savadevel.issuestojira.util.JiraUtil;
@@ -19,9 +20,8 @@ import java.util.Map;
  * Котроллер обрабатывающий запросы пользователя по загрузке / созданию задач в Jira
  */
 @Controller
+@Slf4j
 public class JiraController {
-
-    private static final Logger log = LoggerFactory.getLogger(JiraController.class);
 
     private static final String FORM_LOAD_ISSUES = "form";
     private static final String FORM_ATTRIBUTE = "formTo";
@@ -36,6 +36,7 @@ public class JiraController {
 
     /**
      * Отображение формы загрузки / создания задач в Jira
+     *
      * @param model атрибуты модели
      * @return страница формы
      */
@@ -49,9 +50,10 @@ public class JiraController {
     /**
      * Получает заданную пользователем форму загрузки / создания задач в Jira, выполняет их загрузку в Jira
      * При ошибках в форме загрузки / создания задач в Jira кидает исключение IllegalRequestDataException
-     * @param formTo параметры загрузки / создания задач в Jira
+     *
+     * @param formTo        параметры загрузки / создания задач в Jira
      * @param bindingResult результаты проверки параметров формы загрузки / создания задач в Jira
-     * @param model атрибуты модели
+     * @param model         атрибуты модели
      * @return страница отчета
      */
     @PostMapping("/")

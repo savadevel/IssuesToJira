@@ -1,7 +1,6 @@
 package ru.savadevel.issuestojira.web;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -14,17 +13,17 @@ import ru.savadevel.issuestojira.util.exception.IllegalRequestDataException;
  * Контроллер обрабатывает возникающие исключения в Приложении
  */
 @ControllerAdvice
+@Slf4j
 public class GlobalExceptionHandler {
-
-    private static final Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
     private static final String ERROR_LOAD_ISSUES = "error";
     private static final String ERROR_ATTRIBUTE = "error";
 
     /**
      * Обрабатывает исключения на уровне Приложения
+     *
      * @param exception исключение
-     * @param model м
+     * @param model     м
      * @return страница с ошибкой
      */
     @ExceptionHandler(ApplicationException.class)
@@ -37,8 +36,9 @@ public class GlobalExceptionHandler {
 
     /**
      * Обрабатывает при обработке входных параметров
+     *
      * @param exception исключение
-     * @param model атрибуты модели
+     * @param model     атрибуты модели
      * @return страница с ошибкой
      */
     @ExceptionHandler(IllegalRequestDataException.class)
@@ -51,8 +51,9 @@ public class GlobalExceptionHandler {
 
     /**
      * Обрабатывает исключения, которые на обработаны другими
+     *
      * @param exception исключение
-     * @param model атрибуты модели
+     * @param model     атрибуты модели
      * @return страница с ошибкой
      */
     @ExceptionHandler
