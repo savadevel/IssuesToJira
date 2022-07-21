@@ -1,5 +1,6 @@
 package ru.savadevel.issuestojira.util;
 
+import lombok.experimental.UtilityClass;
 import ru.savadevel.issuestojira.model.IssueJira;
 import ru.savadevel.issuestojira.to.DescriptionTo;
 import ru.savadevel.issuestojira.to.IssueTo;
@@ -12,15 +13,15 @@ import java.util.stream.Collectors;
 /**
  * Утилитный класс для работы с задачами
  */
-public class IssueUtil {
 
-    private IssueUtil() {
-    }
+@UtilityClass
+public class IssueUtil {
 
     /**
      * Конвертирует список задач в задачи для Jira
-     * @param projectKey ключ проекта
-     * @param issuesTo задачи для конвертации
+     *
+     * @param projectKey     ключ проекта
+     * @param issuesTo       задачи для конвертации
      * @param descriptionsTo описание задач для конвертации
      * @return список задач для Jira
      */

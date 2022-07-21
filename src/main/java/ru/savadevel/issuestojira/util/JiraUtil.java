@@ -1,5 +1,6 @@
 package ru.savadevel.issuestojira.util;
 
+import lombok.experimental.UtilityClass;
 import ru.savadevel.issuestojira.model.IssueJira;
 import ru.savadevel.issuestojira.model.ProjectJira;
 import ru.savadevel.issuestojira.service.JiraService;
@@ -17,12 +18,12 @@ import java.util.Map;
 /**
  * Утилитный класс для работы с сервисом Jira
  */
+@UtilityClass
 public class JiraUtil {
-    private JiraUtil() {
-    }
 
     /**
      * Создание задач в Jira, при ошибках кидает исключение ApplicationException
+     *
      * @param formTo форма с параметрами подключения к Jira и задачами Jira, которые требуется создать
      * @return отчет по созданию задач в Jira, содержит пары: ключ задачи в Jira и переданная задача Jira
      */
