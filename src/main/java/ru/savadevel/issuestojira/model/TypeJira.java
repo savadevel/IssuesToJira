@@ -23,7 +23,7 @@ public enum TypeJira {
     }
 
     public static TypeJira fromValue(Long id) {
-        for (TypeJira c: TypeJira.values()) {
+        for (TypeJira c : TypeJira.values()) {
             if (c.id.equals(id)) {
                 return c;
             }

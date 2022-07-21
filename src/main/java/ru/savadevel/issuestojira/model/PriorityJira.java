@@ -25,7 +25,7 @@ public enum PriorityJira {
     }
 
     public static PriorityJira fromValue(Long id) {
-        for (PriorityJira c: PriorityJira.values()) {
+        for (PriorityJira c : PriorityJira.values()) {
             if (c.id.equals(id)) {
                 return c;
             }
