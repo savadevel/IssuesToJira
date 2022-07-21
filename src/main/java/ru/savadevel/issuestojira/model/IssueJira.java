@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NonNull;
 
 /**
- *  Задача в Jira
+ * Задача в Jira
  */
 @Data
 @AllArgsConstructor

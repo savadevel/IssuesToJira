@@ -22,6 +22,7 @@ public class IllegalRequestDataException extends RuntimeException {
 
     /**
      * Возвращает результаты проверки входных параметров
+     *
      * @return результаты проверки входных параметров
      */
     public BindingResult getBindingResult() {

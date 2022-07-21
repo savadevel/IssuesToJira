@@ -39,6 +39,7 @@ public class JiraService implements Closeable {
 
     /**
      * Создает задачу в Jira
+     *
      * @param issue задача в Jira, которую требуется создать
      * @return key созданной задачи в Jira
      */
